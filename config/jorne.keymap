@@ -22,6 +22,13 @@
 
             label = "SHUTDOWNTERMINALPROCESS";
         };
+        macro_control_option: macro_control_option {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LEFT_CONTROL &kp LEFT_ALT>;
+
+            label = "MACRO_CONTROL_OPTION";
+        };
     };
 
     keymap {
@@ -47,10 +54,10 @@
 
         layer_raise {
             bindings = <
-&trans  &kp KP_NUM   &kp KP_SLASH              &kp HOME        &kp UP_ARROW    &kp END          &kp KP_MINUS  &kp C_VOL_UP       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLCK         &kp CAPS         &trans
-        &lt 3 UNDER  &shutDownTerminalProcess  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp KP_PLUS   &kp C_VOLUME_DOWN  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp INS          &mt RCTRL K_APP
-        &trans       &kp GRAVE                 &kp PAGE_UP     &kp UNDERSCORE  &kp PAGE_DOWN    &kp PIPE      &kp C_MUTE         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PAUSE_BREAK  &trans
-                                                               &trans          &trans           &lt 3 RET     &lt 3 ESC          &kp KP_NUMBER_0  &trans
+&trans  &kp KP_NUM   &kp KP_SLASH              &kp HOME        &kp UP_ARROW    &kp END          &kp KP_MINUS  &kp C_VOL_UP       &kp KP_NUMBER_7  &kp KP_NUMBER_8        &kp KP_NUMBER_9  &kp SLCK         &kp CAPS         &trans
+        &lt 3 UNDER  &shutDownTerminalProcess  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp KP_PLUS   &kp C_VOLUME_DOWN  &kp KP_NUMBER_4  &kp KP_NUMBER_5        &kp KP_NUMBER_6  &kp INS          &mt RCTRL K_APP
+        &trans       &kp GRAVE                 &kp PAGE_UP     &kp UNDERSCORE  &kp PAGE_DOWN    &kp PIPE      &kp C_MUTE         &kp KP_NUMBER_1  &kp KP_NUMBER_2        &kp KP_NUMBER_3  &kp PAUSE_BREAK  &trans
+                                                               &trans          &trans           &lt 3 RET     &lt 3 ESC          &kp KP_NUMBER_0  &macro_control_option
             >;
         };
 
